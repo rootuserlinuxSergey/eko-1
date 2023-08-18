@@ -1,48 +1,42 @@
 from django.contrib import admin
-from .models import Man, Woman, Solution
+from .models import Solution
 
 @admin.register(Solution)
 class SolutionAdmin(admin.ModelAdmin):
     # список полей, отображаемых в адмике по порядку их следования
     list_display = ('id',
+                    'date',
                     'number',
                     'commission_name',
-                    'date',
-                    'man',
-                    'woman',
                     'solution',
                     'org_referal',
                     'reason',
                     'commission_chairman',
                     'commission_secretary',
-                    'commission_members')
-
-@admin.register(Man)
-class ManAdmin(admin.ModelAdmin):
-    # список полей, отображаемых в адмике по порядку их следования
-    list_display = ('id',
-                    'surname',
-                    'name',
-                    'dad_name',
-                    'birth_date',
-                    'birth_place',
-                    'location',
-                    'doc_type',
-                    'pasport_type',
-                    'pasport_serial',
-                    'pasport_number')
-
-@admin.register(Woman)
-class WomanAdmin(admin.ModelAdmin):
-    # список полей, отображаемых в адмике по порядку их следования
-    list_display = ('id',
-                    'surname',
-                    'name',
-                    'dad_name',
-                    'birth_date',
-                    'birth_place',
-                    'location',
-                    'doc_type',
-                    'pasport_type',
-                    'pasport_serial',
-                    'pasport_number')
+                    'commission_members',
+                    'woman_surname',
+                    'woman_name',
+                    'woman_dad_name',
+                    'woman_birth_date',
+                    'woman_birth_place',
+                    'woman_location',
+                    'woman_pasport_type',
+                    'woman_pasport_serial',
+                    'woman_pasport_number',
+                    'woman_date_issue',
+                    'woman_issuing_authority',
+                    'woman_who_issued',
+                    'man_surname',
+                    'man_name',
+                    'man_dad_name',
+                    'man_birth_date',
+                    'man_birth_place',
+                    'man_location',
+                    'man_pasport_type',
+                    'man_pasport_serial',
+                    'man_pasport_number',
+                    'man_date_issue',
+                    'man_issuing_authority',
+                    'man_who_issued',
+                    'marriage_reg_mark',
+                    )

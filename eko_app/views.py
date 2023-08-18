@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .form import AddSolutionForm
 
-# Create your views here.
+def add_solution(request):
+    if request.method == 'POST':
+        form = AddSolutionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = AddSolutionForm()
+    return render(request, 'index.html', {'form': form, 'title': 'Добавление статьи'})
