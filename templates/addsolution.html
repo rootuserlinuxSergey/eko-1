@@ -1,15 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %} /">
+    <link rel="stylesheet" href="{% static 'css/addsolution.css' %}">
+    <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
 </head>
 <body>
     <h1>{{title}}</h1>
 
-    <form method="post" enctype="multipart/form-data">
+    <form method="post">
         {% csrf_token %}
         <div class="form-error">{{ form.non_field_errors }}</div>
         {% for f in form %}
@@ -18,5 +19,8 @@
         {% endfor %}
         <button type="submit">Сохранить</button>
     </form>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/select2.min.js' %}"></script>
+    <script src="{% static 'js/addsolution.js' %}"></script>
 </body>
 </html>

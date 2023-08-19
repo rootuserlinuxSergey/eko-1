@@ -9,4 +9,4 @@ def add_solution(request):
             return redirect('/')
     else:
         form = AddSolutionForm()
-    return render(request, 'index.html', {'form': form, 'title': 'Добавление статьи'})
+    return render(request, 'addsolution.html', {'form': form, 'title': 'Добавление статьи'})
